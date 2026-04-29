@@ -12,33 +12,28 @@ export function Balance({ movimientos }) {
 
   return (
     <div className="panel">
-      <h2 className="panel-titulo">Balance</h2>
+    <h2 className="panel-titulo">Balance</h2>
 
-      {/* Balance total */}
-      <div className="balance-caja">
+    {/* Balance centrado */}
+    <div className="balance-caja">
         <p className="balance-etiqueta">Balance total</p>
         <p className={`balance-numero ${balanceTotal >= 0 ? "positivo" : "negativo"}`}>
-          {balanceTotal < 0 ? "-" : ""}${Math.abs(balanceTotal).toFixed(2)}
+        {balanceTotal < 0 ? "-" : ""}${Math.abs(balanceTotal).toFixed(2)}
         </p>
-      </div>
+    </div>
 
-      {/* Totales ingreso / egreso */}
-      <div className="totales-fila">
+    {/* Abajo */}
+    <div className="totales-fila">
         <div className="total-caja">
-          <p className="total-etiqueta">Ingresos</p>
-          <p className="total-numero ingreso">
-            ${totalIngresos.toFixed(2)}
-          </p>
+        <p className="total-etiqueta">Ingresos</p>
+        <p className="total-numero ingreso">${totalIngresos.toFixed(2)}</p>
         </div>
 
         <div className="total-caja">
-          <p className="total-etiqueta">Egresos</p>
-          <p className="total-numero egreso">
-            ${totalEgresos.toFixed(2)}
-          </p>
+        <p className="total-etiqueta">Egresos</p>
+        <p className="total-numero egreso">${totalEgresos.toFixed(2)}</p>
         </div>
-      </div>
-
-    </div> 
+    </div>
+    </div>
   );
 }

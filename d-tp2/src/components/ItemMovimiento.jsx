@@ -13,7 +13,7 @@ export function ItemMovimiento({ movimiento, onEliminar }) {
         <span className="item-importe">
           {esIngreso ? "+" : "-"}${movimiento.importe.toFixed(2)}
         </span>
-        <button className="boton-eliminar" onClick={() => onEliminar(movimiento.id)}>✕ </button>
+        <button className="boton-eliminar" onClick={() => onEliminar(movimiento.id)}>✕</button>
       </div>
     </div>
   );

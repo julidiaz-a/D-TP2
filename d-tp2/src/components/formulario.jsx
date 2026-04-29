@@ -1,13 +1,12 @@
 import { useState } from "react";
 
-
 // Componente: Formulario
 // Recibe la prop: onAgregar
 export function Formulario({ onAgregar }) {
   const [importe, setImporte] = useState("");
   const [tipo, setTipo] = useState("INGRESO");
   const [categoria, setCategoria] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState();
 
   function handleCargar() {
     // Validaciones
@@ -15,10 +14,11 @@ export function Formulario({ onAgregar }) {
       setError("El importe debe ser mayor a cero.");
       return;
     }
-    if (categoria===" "){
-       setError("Categorice el importe");
+     if (categoria==="") {
+      setError("Seleccione la categoria");
       return;
     }
+  
 
     // Si pasó las validaciones, Limpiamos el error
     setError("");
@@ -36,7 +36,7 @@ export function Formulario({ onAgregar }) {
 
     // Limpiamos el formulario
     setImporte("");
-    setTipo("");
+    setTipo();
     setCategoria("");
   }
 
@@ -70,6 +70,7 @@ export function Formulario({ onAgregar }) {
           onChange={(e) => setCategoria(e.target.value)}
            >
           <option value="Comida">Comida</option>
+          <option value="Sueldo">Sueldo</option>
           <option value="Transporte">Transporte</option>
           <option value="Ocio">Ocio</option>
           <option value="Salud">Salud</option>

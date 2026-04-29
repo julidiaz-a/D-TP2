@@ -191,6 +191,17 @@ body {
   padding: 1rem 0;
 }
 
+/*Balance*/
+
+.balance-caja {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.balance-numero {
+  font-size: 32px;
+  font-weight: bold;
+}
 
 .balance-etiqueta {
   font-size: 12px;
@@ -198,10 +209,6 @@ body {
   margin-bottom: 4px;
 }
 
-.balance-numero {
-  font-size: 28px;
-  font-weight: 700;
-}
 
 .balance-numero.positivo {
   color: #059669;
@@ -212,17 +219,19 @@ body {
 }
 
 /* ── Totales ── */
+
 .totales-fila {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 12px;
 }
-
 .total-caja {
   background: #f9fafb;
-  border-radius: 8px;
-  padding: 10px 12px;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
 }
+
 
 .total-etiqueta {
   font-size: 11px;
