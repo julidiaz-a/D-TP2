@@ -190,3 +190,55 @@ body {
   text-align: center;
   padding: 1rem 0;
 }
+
+
+.balance-etiqueta {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.balance-numero {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.balance-numero.positivo {
+  color: #059669;
+}
+
+.balance-numero.negativo {
+  color: #dc2626;
+}
+
+/* ── Totales ── */
+.totales-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.total-caja {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.total-etiqueta {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-bottom: 3px;
+}
+
+.total-numero {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.total-numero.ingreso {
+  color: #059669;
+}
+
+.total-numero.egreso {
+  color: #dc2626;
+}

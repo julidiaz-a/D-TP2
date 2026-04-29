@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Formulario } from "./components/formulario";
 import { ListaMovimientos } from "./components/ListaMovimientos";
+import { Balance } from "./components/Balance";
 
 //CSS
 import "./App.css";
@@ -29,6 +30,8 @@ function App() {
             onEliminar={eliminarMovimiento}
           />
         </div>
+         {/* Columna derecha */}
+        <Balance movimientos={movimientos} />
       </div>
     </div>
   );

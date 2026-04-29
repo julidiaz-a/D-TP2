@@ -15,7 +15,7 @@ export function Formulario({ onAgregar }) {
       setError("El importe debe ser mayor a cero.");
       return;
     }
-    if (categoria===""){
+    if (categoria===" "){
        setError("Categorice el importe");
       return;
     }
@@ -68,7 +68,7 @@ export function Formulario({ onAgregar }) {
         <select
           value={categoria}
           onChange={(e) => setCategoria(e.target.value)}
-        >
+           >
           <option value="Comida">Comida</option>
           <option value="Transporte">Transporte</option>
           <option value="Ocio">Ocio</option>
