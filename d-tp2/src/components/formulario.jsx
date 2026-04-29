@@ -15,6 +15,10 @@ export function Formulario({ onAgregar }) {
       setError("El importe debe ser mayor a cero.");
       return;
     }
+    if (categoria===""){
+       setError("Categorice el importe");
+      return;
+    }
 
     // Si pasó las validaciones, Limpiamos el error
     setError("");
