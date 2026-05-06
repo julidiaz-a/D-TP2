@@ -1,4 +1,4 @@
-import { ItemMovimiento } from "./itemMovimiento";
+import { ItemMovimiento } from "./ItemMovimiento";
 // Componente : ListaMovimientos
 // Recibe props: movimientos (array) y onEliminar (función)
 export function ListaMovimientos({ movimientos, onEliminar }) {
