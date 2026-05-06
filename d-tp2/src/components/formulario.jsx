@@ -5,20 +5,16 @@ import { useState } from "react";
 export function Formulario({ onAgregar }) {
   const [importe, setImporte] = useState("");
   const [tipo, setTipo] = useState("INGRESO");
-  const [categoria, setCategoria] = useState("");
+  const [categoria, setCategoria] = useState("Comida");
   const [error, setError] = useState();
-
+  const CATEGORIAS = ["Comida", "Transporte", "Ocio", "Salud", "Otros"];
+ 
   function handleCargar() {
     // Validaciones
     if (importe === "" || Number(importe) <= 0) {
       setError("El importe debe ser mayor a cero.");
       return;
     }
-     if (categoria==="") {
-      setError("Seleccione la categoria");
-      return;
-    }
-  
 
     // Si pasó las validaciones, Limpiamos el error
     setError("");
@@ -36,8 +32,8 @@ export function Formulario({ onAgregar }) {
 
     // Limpiamos el formulario
     setImporte("");
-    setTipo();
-    setCategoria("");
+    setTipo("INGRESO");
+    setCategoria("Comida");
   }
 
   return (
@@ -63,21 +59,14 @@ export function Formulario({ onAgregar }) {
         </select>
       </div>
 
-      <div className="campo">
+     <div className="campo">
         <label>Categoría</label>
-        <select
-          value={categoria}
-          onChange={(e) => setCategoria(e.target.value)}
-           >
-          <option value="Comida">Comida</option>
-          <option value="Sueldo">Sueldo</option>
-          <option value="Transporte">Transporte</option>
-          <option value="Ocio">Ocio</option>
-          <option value="Salud">Salud</option>
-          <option value="Hogar">Hogar</option>
-          <option value="Otro">Otro</option>
+        <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
+          {CATEGORIAS.map((cat) => (
+            <option key={cat} value={cat}>{cat}</option>
+          ))}
         </select>
-      </div>
+    </div>
 
       {error && <p className="error">{error}</p>}
 

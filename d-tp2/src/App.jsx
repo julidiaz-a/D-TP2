@@ -17,6 +17,7 @@ function App() {
   function eliminarMovimiento(id) {
     setMovimientos(movimientos.filter((m) => m.id !== id));
   }
+  
 
 
   return (
