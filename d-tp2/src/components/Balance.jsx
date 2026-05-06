@@ -14,9 +14,8 @@ export function Balance({ movimientos }) {
 
   const [limitePresupuesto, setLimitePresupuesto] = useState ("");
 
-  const limite = parseFloat(limitePresupuesto);
-
-  const superaLimite = !isNaN(limite) && limite > 0 && totalEgresos > limite;
+  const limite = parseFloat(limitePresupuesto); // Convierte a numero 
+  const superaLimite = !isNaN(limite) && limite > 0 && totalEgresos > limite;//Compara constantemente el limite y los egresos
   return (
     <div className="panel">
       <h2 className="panel-titulo">Balance</h2>
@@ -41,21 +40,16 @@ export function Balance({ movimientos }) {
           <p className="total-numero egreso">${totalEgresos.toFixed(2)}</p>
           </div>
       </div>
-      
+        {/* Alerta */}
       <div className={`panel ${superaLimite ? "panel-alerta" : ""}`}>
-        <p className="panel-titulo">Límite de Gastos Mensual</p>
 
+        <p className="panel-titulo">Límite de Gastos Mensual</p>
         {superaLimite && (
           <div className="alerta-presupuesto">
-            ⚠️ ¡Superaste tu límite de gastos!
+            <p>⚠️ ¡Superaste tu límite de gastos!</p>
             <br />
             <span>
-              Gastaste $
-              {totalEgresos.toLocaleString("es-AR", {
-                minimumFractionDigits: 2,
-              })}{" "}
-              de un límite de $
-              {limite.toLocaleString("es-AR", { minimumFractionDigits: 2 })}
+              <p>Gastaste ${totalEgresos.toFixed(2)} de un límite de ${limite.toFixed(2)}</p>
             </span>
           </div>
         )}
